@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Show Restaurant <%= @restaurant.name %></h1>
+  <h3><%= @restaurant.address  %></h3>
+  <h3><%= @restaurant.phone_number  %></h3>
+  <h4><%= @restaurant.category %></h4>
+
+  <% @restaurant.reviews.each do |review| %>
+  <hr>
+  <p><%= review.content %></p>
+  <p><%= '*' * review.rating %></p>
+  <% end %>
+  <hr>
+  <%= link_to 'back to List', restaurants_path  %>
+  <%= link_to "Edit review", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
+</div>
+
